@@ -1,0 +1,46 @@
+---
+title: "Data analysis with Grow-Shrink and Hill-Climb Algorithms"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{bnanalysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+devtools::load_all(".")
+```
+### Dominik Kunz
+### 20.09.21
+
+## Introduction
+This vigniette gives a high level overview on the potential use of the bnanalysis
+library R package. The package consists of two functions:\
+1. hcanalysis(): Data analysis via hill-climbing algorithm \
+2. gsanalysis(): Data analysis via grow-shrink algorithm \
+
+
+```{r}
+library(bnanalysis)
+```
+
+## Data Input
+To run the analysis the R Package needs input data in the form of a data frame
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=100,fig.width=5)
+```
+
+## Generating Output
+The output presents missing connections between nodes (red), and returns a summary
+of the model.
+```{r}
+gsanalysis(iris)
+```
+
+If there are no connections missing the model will simply plot the model structure
+and list a model summary
+```{r}
+hcanalysis(iris)
+```
+
